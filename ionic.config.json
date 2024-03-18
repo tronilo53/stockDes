@@ -1,0 +1,7 @@
+{
+  "name": "stockDes",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
