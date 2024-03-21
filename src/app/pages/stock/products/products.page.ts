@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsPage implements OnInit {
 
-  constructor() { }
+  public param: string = '';
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-  }
+    this.activatedRoute.params.subscribe((param: Params) => {
+      this.param = param['category'];
+    });
+  } 
 
+  public selection(): void {}
 }
